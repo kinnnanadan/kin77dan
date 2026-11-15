@@ -35,12 +35,12 @@
         <div class="nav-label">EXTERNAL / SUB-SITES</div>
         <ul class="nav-list">
           <li>
-            <a href="https://kin77dan.github.io/ps3-syscon-lookup/" class="nav-link external">
+            <a href="https://kinnnanadan.github.io/ps3-syscon-lookup/#home" class="nav-link external">
               PS3 Dev / Syscon Lookup <span class="badge">別サイト</span>
             </a>
           </li>
           <li>
-            <a href="https://github.com/kin77dan" target="_blank" rel="noopener noreferrer" class="nav-link external">
+            <a href="https://github.com/kinnnanadan" target="_blank" rel="noopener noreferrer" class="nav-link external">
               GitHub ↗
             </a>
           </li>
@@ -51,14 +51,16 @@
       <div class="sidebar-settings">
         <div class="setting-group">
           <span class="setting-label">テーマ</span>
-          <button id="theme-toggle" class="control-btn full-width" type="button">
-            🌙 ダークモード
-          </button>
+          <div class="option-group" role="group" aria-label="テーマ変更">
+            <button type="button" class="control-btn theme-btn" data-theme-val="light">ライト</button>
+            <button type="button" class="control-btn theme-btn active" data-theme-val="blue">ブルー</button>
+            <button type="button" class="control-btn theme-btn" data-theme-val="dark">ブラック</button>
+          </div>
         </div>
 
         <div class="setting-group">
           <span class="setting-label">文字サイズ</span>
-          <div class="font-size-group" role="group" aria-label="文字サイズ変更">
+          <div class="option-group" role="group" aria-label="文字サイズ変更">
             <button type="button" class="control-btn size-btn" data-size="small">小</button>
             <button type="button" class="control-btn size-btn active" data-size="medium">中</button>
             <button type="button" class="control-btn size-btn" data-size="large">大</button>
@@ -79,7 +81,7 @@
       <section id="projects" class="section">
         <h2>公開中のサイト・ツール</h2>
         <div class="card-grid">
-          <a href="https://kin77dan.github.io/ps3-syscon-lookup/" class="project-card">
+          <a href="https://kinnnanadan.github.io/ps3-syscon-lookup/#home" class="project-card">
             <div class="project-header">
               <h3>PS3 Dev / Syscon Lookup</h3>
               <span class="tag">Web App / Wiki</span>

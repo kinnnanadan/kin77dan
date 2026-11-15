@@ -1,28 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
   const htmlEl = document.documentElement;
-  const themeToggleBtn = document.getElementById("theme-toggle");
+  const themeButtons = document.querySelectorAll(".theme-btn");
   const sizeButtons = document.querySelectorAll(".size-btn");
   const menuToggleBtn = document.getElementById("menu-toggle");
   const sidebar = document.getElementById("sidebar");
   const overlay = document.getElementById("sidebar-overlay");
   const navLinks = document.querySelectorAll(".nav-link");
 
-  // --- 1. ダークモード設定 ---
+  // --- 1. テーマ設定（light / blue / dark） ---
   const savedTheme = localStorage.getItem("kin77dan-theme");
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const initialTheme = savedTheme || (prefersDark ? "dark" : "light");
+  const initialTheme = savedTheme || (prefersDark ? "blue" : "light");
 
   function applyTheme(theme) {
     htmlEl.setAttribute("data-theme", theme);
     localStorage.setItem("kin77dan-theme", theme);
-    themeToggleBtn.textContent = theme === "dark" ? "☀️ ライトモード" : "🌙 ダークモード";
+
+    themeButtons.forEach((btn) => {
+      btn.classList.toggle("active", btn.dataset.themeVal === theme);
+    });
   }
 
   applyTheme(initialTheme);
 
-  themeToggleBtn.addEventListener("click", () => {
-    const current = htmlEl.getAttribute("data-theme");
-    applyTheme(current === "dark" ? "light" : "dark");
+  themeButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      applyTheme(btn.dataset.themeVal);
+    });
   });
 
   // --- 2. 文字サイズ設定 ---

@@ -1,3 +1,4 @@
+/* 1. ライトテーマ（デフォルト基準） */
 :root {
   --font-size-base: 16px;
   --bg-body: #f5f7fa;
@@ -13,7 +14,8 @@
   --sidebar-width: 260px;
 }
 
-[data-theme="dark"] {
+/* 2. ブルーダークテーマ（ネイビーブルー系） */
+[data-theme="blue"] {
   --bg-body: #0f172a;
   --bg-surface: #1e293b;
   --bg-sidebar: #162032;
@@ -24,6 +26,20 @@
   --accent: #60a5fa;
   --accent-hover: #93c5fd;
   --accent-soft: #1e3a5f;
+}
+
+/* 3. 完全なダークテーマ（漆黒・ピュアブラック系） */
+[data-theme="dark"] {
+  --bg-body: #000000;
+  --bg-surface: #111111;
+  --bg-sidebar: #0a0a0a;
+  --bg-hover: #1f1f1f;
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+  --border-color: #262626;
+  --accent: #38bdf8;
+  --accent-hover: #7dd3fc;
+  --accent-soft: #172533;
 }
 
 html {
@@ -153,37 +169,42 @@ body {
   margin-bottom: 0.35rem;
 }
 
+.option-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.35rem;
+}
+
 .control-btn {
   background-color: var(--bg-body);
   color: var(--text-main);
   border: 1px solid var(--border-color);
   border-radius: 6px;
-  padding: 0.45rem 0.75rem;
-  font-size: 0.85rem;
+  padding: 0.45rem 0.35rem;
+  font-size: 0.8rem;
   cursor: pointer;
   transition: all 0.15s;
+  text-align: center;
 }
 
 .control-btn:hover {
   background-color: var(--bg-hover);
 }
 
-.control-btn.full-width {
-  width: 100%;
-  text-align: center;
-}
-
-.font-size-group {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.35rem;
-}
-
+.theme-btn.active,
 .size-btn.active {
   background-color: var(--accent);
   color: #ffffff;
   border-color: var(--accent);
   font-weight: 600;
+}
+
+/* ダーク系テーマ時はアクティブボタンの文字色を濃い色にして視認性を確保 */
+[data-theme="blue"] .theme-btn.active,
+[data-theme="blue"] .size-btn.active,
+[data-theme="dark"] .theme-btn.active,
+[data-theme="dark"] .size-btn.active {
+  color: #0b1120;
 }
 
 /* メインコンテンツ */
@@ -339,7 +360,7 @@ h2 {
     display: block;
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.45);
+    background: rgba(0, 0, 0, 0.55);
     z-index: 95;
   }
 
