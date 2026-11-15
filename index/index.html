@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>kin77dan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- モバイル用ヘッダー -->
+  <header class="mobile-header">
+    <button id="menu-toggle" class="icon-btn" aria-label="メニューを開く">☰</button>
+    <span class="site-title-mobile">kin77dan</span>
+  </header>
+
+  <!-- オーバーレイ（モバイル時） -->
+  <div id="sidebar-overlay" class="overlay"></div>
+
+  <div class="layout">
+    <!-- サイドメニュー -->
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-header">
+        <a href="./" class="site-title">kin77dan</a>
+        <p class="site-subtitle">Hardware / DIY / Tech Notes</p>
+      </div>
+
+      <nav class="nav-section">
+        <div class="nav-label">MENU</div>
+        <ul class="nav-list">
+          <li><a href="#top" class="nav-link active">トップ</a></li>
+          <li><a href="#projects" class="nav-link">制作物・ツール</a></li>
+          <li><a href="#about" class="nav-link">プロフィール</a></li>
+        </ul>
+
+        <div class="nav-label">EXTERNAL / SUB-SITES</div>
+        <ul class="nav-list">
+          <li>
+            <a href="https://kin77dan.github.io/ps3-syscon-lookup/" class="nav-link external">
+              PS3 Dev / Syscon Lookup <span class="badge">別サイト</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/kin77dan" target="_blank" rel="noopener noreferrer" class="nav-link external">
+              GitHub ↗
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 表示設定（テーマ・文字サイズ） -->
+      <div class="sidebar-settings">
+        <div class="setting-group">
+          <span class="setting-label">テーマ</span>
+          <button id="theme-toggle" class="control-btn full-width" type="button">
+            🌙 ダークモード
+          </button>
+        </div>
+
+        <div class="setting-group">
+          <span class="setting-label">文字サイズ</span>
+          <div class="font-size-group" role="group" aria-label="文字サイズ変更">
+            <button type="button" class="control-btn size-btn" data-size="small">小</button>
+            <button type="button" class="control-btn size-btn active" data-size="medium">中</button>
+            <button type="button" class="control-btn size-btn" data-size="large">大</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content" id="top">
+      <section class="hero card">
+        <h1>kin77dan のサイト</h1>
+        <p>
+          ハードウェア修理、電子工作、マイコン制御、3Dプリント、サーバー構築などの技術メモや自作ツールをまとめた個人サイトです。
+        </p>
+      </section>
+
+      <section id="projects" class="section">
+        <h2>公開中のサイト・ツール</h2>
+        <div class="card-grid">
+          <a href="https://kin77dan.github.io/ps3-syscon-lookup/" class="project-card">
+            <div class="project-header">
+              <h3>PS3 Dev / Syscon Lookup</h3>
+              <span class="tag">Web App / Wiki</span>
+            </div>
+            <p>
+              PlayStation 3 の Syscon エラーコード検索、ファン制御テーブル計算・コマンド生成ツール、PS3 Dev Wiki の日本語訳など。
+            </p>
+          </a>
+
+          <div class="project-card placeholder">
+            <div class="project-header">
+              <h3>電子工作・マイコンメモ</h3>
+              <span class="tag">準備中</span>
+            </div>
+            <p>
+              Raspberry Pi / Pico / ESP32 を使った制作物や回路の記録を追加予定です。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <h2>プロフィール</h2>
+        <div class="card">
+          <ul class="profile-list">
+            <li><strong>ハンドルネーム：</strong>kin77dan</li>
+            <li><strong>主な関心分野：</strong>ゲーム機・オーディオ機器の基板修理、マイコン開発、3D CAD / FDM 3Dプリント、Linuxサーバー運用、動画・音声エンコード</li>
+          </ul>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>&copy; 2026 kin77dan</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
